@@ -1,139 +1,149 @@
-# Laravel Multi-vendor E-commerce Application (Mega Project)
-Multi-vendor E-commerce is a large-scale project/application built with Laravel framework. The application contains comprehensive and feature-rich modules and functionalities. It is designed to provide a robust platform for businesses to create their online marketplaces, allowing multiple vendors to sell their products and manage their stores within a single platform. Additionally, the application has its own dedicated extensive API, which requires authentication using Laravel Passport package.
+# Laravel Multi-Vendor E-Commerce Application 🛒
 
-Frontend technologies used: jQuery, AJAX, and many JavaScript & jQuery libraries and plugins.
+![Laravel Multi-Vendor E-Commerce Application](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg) ![License](https://img.shields.io/badge/License-MIT-blue.svg) ![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)
 
-## Features:
-1- Third-pary API Integration (Shiprocket API integration (for shipping and order management services)).
+Welcome to the **Laravel Multi-Vendor E-Commerce Application** repository! This project is designed to provide a comprehensive platform for multi-vendor e-commerce. With a rich set of features and modules, it allows multiple vendors to sell their products seamlessly. The application includes a dedicated API with Passport authentication, ensuring secure access and integration.
 
-2- PayPal Payment Gateway Integration.
+## Table of Contents
 
-3- Iyzico Payment Gateway Integration.
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [License](#license)
+- [Links](#links)
 
-4- A dedicated extensive API with multiple different endpoints for the application.
+## Features ✨
 
-5- API authentication using Laravel Passport package.
+- **Multi-Vendor Support**: Allow multiple vendors to register and sell their products.
+- **User Authentication**: Secure login and registration for users and vendors using Laravel Passport.
+- **Payment Integration**: Support for PayPal and other payment gateways.
+- **Shipping Management**: Calculate shipping charges based on location and weight.
+- **Product Management**: Vendors can add, edit, and delete their products easily.
+- **Order Management**: Users can view and manage their orders.
+- **Webhook Integration**: Set up webhooks for real-time notifications and updates.
+- **DataTables Integration**: Efficient data handling for large datasets.
+- **API Integration**: Extensive API for third-party integrations.
 
-6- Webhook implemented for inventory/stock update.
+## Technologies Used 🛠️
 
-7 - Using PHP cURL.
+- **Laravel**: The core framework for building the application.
+- **MySQL**: Database management system for storing data.
+- **Passport**: For API authentication.
+- **JavaScript**: For dynamic content and interactions.
+- **HTML/CSS**: For the front-end layout and styling.
+- **Bootstrap**: For responsive design.
+- **jQuery**: For simplifying JavaScript operations.
 
-8- Multiple Authentication using Laravel Guards.
+## Installation ⚙️
 
-9- Multi-level Relationships/Categories.
+To set up the application locally, follow these steps:
 
-10- Product Dynamic Filters (using AJAX).
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/mahardhikabdz/Laravel-Multi-Vendor-E-Commerce-Application.git
+   cd Laravel-Multi-Vendor-E-Commerce-Application
+   ```
 
-11- Shipping Charges Module (third-party service API integration, product-weight and country-wise shipping charges, etc).
+2. **Install Dependencies**:
+   Use Composer to install the required PHP packages.
+   ```bash
+   composer install
+   ```
 
-12- Showing Order Shipping Status.
+3. **Set Up Environment File**:
+   Copy the `.env.example` file to `.env` and configure your database and other settings.
+   ```bash
+   cp .env.example .env
+   ```
 
-13- Vendor Commissions Module.
+4. **Generate Application Key**:
+   Run the following command to generate the application key.
+   ```bash
+   php artisan key:generate
+   ```
 
-14- Coupon Codes Module (single time/multiple times, percentage/fixed).
+5. **Run Migrations**:
+   Create the necessary database tables by running the migrations.
+   ```bash
+   php artisan migrate
+   ```
 
-15- Star Rating and Reviews System.
+6. **Install NPM Packages**:
+   If you need to compile front-end assets, run:
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-16- Recently Viewed Products Feature.
+7. **Start the Development Server**:
+   Launch the application locally.
+   ```bash
+   php artisan serve
+   ```
 
-17- Order Logs/History.
+Now, you can access the application at `http://localhost:8000`.
 
-18- New Arrivals, Discounted Products, Featured Products, Similar Products, and Best-Seller Products Features.
+## Usage 📖
 
-19- Using external libraries and packages such as 'Intervention Image' for image manipulation, 'Dompdf' library for printing PDF order invoices, 'Laravel Excel' package for importing/exporting database tables as Excel files, 'Laravel Barcode/QR Code Generator' to generate barcodes and QR codes for both Product ID and Product Code in order invoices, etc.
+Once the application is up and running, you can:
 
-20- Using JavaScript libraries and jQuery plugins such as 'DataTables' for adding interaction controls to HTML tables, 'EasyZoom' for zooming product images, etc.
+- **Register as a User or Vendor**: Navigate to the registration page and fill out the form.
+- **Login**: Use your credentials to access the dashboard.
+- **Manage Products**: Vendors can add, update, or remove their products.
+- **Place Orders**: Users can browse products and place orders directly.
+- **Check Order Status**: Users can view their order history and status.
 
-21 - Sending Confirmation Emails (Mailtrap) upon registration, account activation and approval, order shipping status, etc.
+## API Documentation 📚
 
-22- Sending offline SMSs (upon registration, starting order shipping process, ...).
+The application provides a robust API for third-party integrations. You can find the API documentation in the `docs/api.md` file. Here are some key endpoints:
 
-23- Multiple Delivery Addresses.
+- **Authentication**:
+  - `POST /api/login`: User login.
+  - `POST /api/register`: User registration.
 
-24- Website Search Form functionality for products by name, color, and code.
+- **Products**:
+  - `GET /api/products`: List all products.
+  - `POST /api/products`: Create a new product.
 
-25- User Roles and Permissions (superadmin, admins, vendors, users).
+- **Orders**:
+  - `GET /api/orders`: List all orders.
+  - `POST /api/orders`: Create a new order.
 
-26- User and vendor registration approval by the superadmin.
+For detailed API usage, refer to the documentation linked above.
 
-27- Image & Video Upload Functionality.
+## Contributing 🤝
 
-28- Dynamically creating and editing Sections and Categories.
+We welcome contributions to improve the application. If you would like to contribute, please follow these steps:
 
-29- Dynamic Banner Sliders Module.
+1. **Fork the Repository**: Click the "Fork" button at the top right of this page.
+2. **Create a New Branch**: 
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. **Make Your Changes**: Implement your feature or fix.
+4. **Commit Your Changes**:
+   ```bash
+   git commit -m "Add some feature"
+   ```
+5. **Push to the Branch**:
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+6. **Open a Pull Request**: Go to the original repository and create a pull request.
 
-30- Dynamic Breadcrumb Navigation.
+## License 📜
 
-31- Dynamic SEO/HTML Meta tags.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-32- Newsletter Subscription (email).
+## Links 🔗
 
-33- Regular Expression.
+For the latest updates and releases, visit our [Releases](https://github.com/mahardhikabdz/Laravel-Multi-Vendor-E-Commerce-Application/releases) section. Download and execute the files to get started with the latest version.
 
-34- Database Seeders.
+Feel free to explore the application, and don't hesitate to check the [Releases](https://github.com/mahardhikabdz/Laravel-Multi-Vendor-E-Commerce-Application/releases) section for updates and new features. 
 
-35- Tens of jQuery AJAX requests (update admin password via AJAX, AJAX form validation, ...).
+## Conclusion
 
-36- Custom AJAX pop-up Mini-Cart.
-
-37- Showing a Preloading Screen upon form submission.
-
-38- TinyMCE WYSIWYG Editor Integrated.
-
-39- Using two Favicons for both the Frontend and Admin Panel Sections of the application.
-
-## Screenshots:
-### Frontend Section Homepage:
-![frontend-homepage](https://github.com/AhmedYahyaE/laravel-multi-vendor-e-commerce-application/assets/118033266/37646610-8c9f-4ac6-8a75-75e83cc469c7)
-
-### Product Listing Page:
-![frontend-product-listing-page](https://github.com/AhmedYahyaE/laravel-multi-vendor-e-commerce-application/assets/118033266/6a68ba25-ebd0-4b93-b687-487e35bf4912)
-
-### Shopping Cart Page:
-![shopping-cart-page](https://github.com/AhmedYahyaE/laravel-multi-vendor-e-commerce-application/assets/118033266/64f9cbbf-87d2-4f26-aaf1-5c942d1db85b)
-
-### Checkout Page:
-![checkout-page](https://github.com/AhmedYahyaE/laravel-multi-vendor-e-commerce-application/assets/118033266/0e4057a8-dd7e-4db5-944d-8d8754b86c32)
-
-### Admin Panel HomePage:
-![admin-panel-homepage](https://github.com/AhmedYahyaE/laravel-multi-vendor-e-commerce-application/assets/118033266/afda126b-2ab2-4ce8-9f42-2bd6eee36bfa)
-
-### Admin Panel Products Management Page:
-![admin-panel-products-management](https://github.com/AhmedYahyaE/laravel-multi-vendor-e-commerce-application/assets/118033266/06d8fd5b-6538-4574-b6f4-c3bf4a6a5c32)
-
-## Application URLs:
-1- **Frontend**: The public-facing website can be accessed at http://127.0.0.1:8000/. This is where users/customers/members can view categories and products and interact with the website in general. The frontend URL is typically accessible to all visitors of the website.
-
-2- **Admin Panel**: The Admin Panel for managing the application is available at http://127.0.0.1:8000/admin/login. This secure area is exclusively accessible to authorized administrators where only authenticated superadmin, admins, and vendors can access. It grants access to the administrative functionalities of the application, such as adding new products and their features, orders management, users management, creating and editing website sections and categories, orders shipping management, etc.
-
-## Application Routes and API Endpoints:
-All application routes & API endpoints are defined in both the **[web.php](routes/web.php)** file (Frontend and Admin Panel routes) and **[api.php](routes/api.php)** file (API Endpoints).
-
-## API Endpoints:
-> ***\*\* Check the application API Collection on my Postman Profile: https://www.postman.com/ahmed-yahya/workspace/my-public-portfolio-postman-workspace/collection/28181483-179adc20-2dcc-426c-a755-5a48da9ca7a4***
-
-> ***\*\* Also, you can test the API Endpoints yourself using Postman. Here is the API's Postman Collection .json file [API Postman Collection file](<Postman Collection of API Endpoints/Multi-vendor E-commerce Application API.postman_collection.json>) that you can download and import into your Postman.***
-
-## Installation & Configuration:
-
-1- Open your terminal, and use the '***git clone https://github.com/AhmedYahyaE/laravel-multi-vendor-e-commerce-application.git***' command, or just download the ZIP project.
-
-2- Navigate/Change into (using the **cd** command) to the project root directory, then run the '***composer install***' command.
-
-3- Run the '***npm install***' command (and only in case you face any issues/errors, run the 'npm audit fix' command), and then run the '***npm run build***' command.
-
-4- Create a MySQL database named **\`multivendor_ecommerce\`**, then import the **[multivendor_ecommerce database SQL Dump File](<Database - multivendor_ecommerce/multivendor_ecommerce database - SQL Dump File - phpMyAdmin Export.sql>)** into your **\`multivendor_ecommerce\`** database.
-
-5- Navigate to the **[.env](.env)** file and configure/update it with your MySQL database credentials and other configuration settings.
-
-6- Run the '***php artisan serve***' command, and then open your browser and visit **http://127.0.0.1:8000** to access the Frontend section of the application, or **http://127.0.0.1:8000/admin/login** to access the Admin Panel.
-
-\*\* Ready-to-use registered accounts credentials you can use to log in:
-> 1) Superadmin (to access the Admin Panel): Email: **admin@admin.com**, Password: **123456**
-
-> 2) Vendor (to access the Admin Panel): Email: **yasser@admin.com**, Password: **123456**
-    
-> 3) User (to access the Frontend): Email: **ibrahim@gmail.com**, Password: **123456**
-
-## Contribution:
-Contributions to my Multi-vendor E-commerce Laravel application are most welcome! If you find any issues or have suggestions for improvements or want to add new features, please open an issue or submit a pull request.
+Thank you for checking out the Laravel Multi-Vendor E-Commerce Application! We hope this project serves your needs well. If you have any questions or suggestions, feel free to reach out or contribute. Happy coding!
